@@ -1,23 +1,22 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Authorization Successful</title>
-  </head>
-  <body>
-    <h2>Authorization Successful</h2>
-    <p id="output">Fetching auth code...</p>
+<head>
+  <title>Fyers Redirect</title>
+</head>
+<body>
+  <h2>Authorization Successful</h2>
+  <p id="result">Loading...</p>
 
-    <script>
-      const params = new URLSearchParams(window.location.search);
-      const code = params.get("code");
-      const state = params.get("state");
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const code = params.get("code");
 
-      if (code) {
-        document.getElementById("output").innerText = `Your auth_code: ${code}`;
-        console.log("auth_code =", code);
-      } else {
-        document.getElementById("output").innerText = "No auth_code found in URL.";
-      }
-    </script>
-  </body>
+    if (code) {
+      document.getElementById("result").innerText = "Authorization Code:\n" + code;
+      console.log("Authorization Code:", code);
+    } else {
+      document.getElementById("result").innerText = "No auth_code found in URL.";
+    }
+  </script>
+</body>
 </html>
