@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Redirecting...</title>
+    <script>
+      const params = new URLSearchParams(window.location.search);
+      const code = params.get("auth_code");
+      if (code) {
+        console.log("Authorization Code:", code);
+      }
+    </script>
+  </head>
+  <body>
+    <h2>Authorization Successful</h2>
+    <p>You can now return to your bot. Check the browser console for the auth code.</p>
+  </body>
+</html>
